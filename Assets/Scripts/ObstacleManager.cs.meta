@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 55e821b9a42e41c45854f016e43089a3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spawnLocation: {instanceID: 0}
+  - player: {instanceID: 0}
+  - basicObstacle: {fileID: 8082005910422497615, guid: abc34809eecbb674daf31606b8fd88d4, type: 3}
+  - fuelObstacle: {instanceID: 0}
+  - enemyObstacle: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
