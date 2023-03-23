@@ -20,6 +20,7 @@ public class TextAnimate : MonoBehaviour
 	public float initOpacity;
 	public float finalOpacity;
 	public int CursorTime;
+	public bool destroyOnAnimate = false;
 
 	private int currentFrame = 0; // Frame no. for animation purposes
 	private int trueFrame; 
@@ -83,7 +84,10 @@ public class TextAnimate : MonoBehaviour
 				animTransform.anchoredPosition = finalPosition;
 				animText.faceColor = new Color32(animText.faceColor.r, animText.faceColor.g, animText.faceColor.b, (byte)finalOpacity);
 				isAnimating = false;
-
+				if (destroyOnAnimate)
+				{
+					Destroy(gameObject);
+				}
 			}
 			
 		}
@@ -101,6 +105,10 @@ public class TextAnimate : MonoBehaviour
 					animText.text = originalText + "_";
 				if (!TypeToggle)
 					animText.text = originalText;
+				if (destroyOnAnimate)
+				{
+					Destroy(gameObject);
+				}
 				return; 
 			}
 			currentFrame++;
