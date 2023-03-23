@@ -29,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("HUD References")]
     public SliderScript fuelBar;                    //Stores the fuel bar for the hud.
+    public GameObject scoreText; // Stores the prefab to be spawned when object is picked up
+
+    private GameObject currentScoreText;
+
 
     void Start()
     {
@@ -97,6 +101,8 @@ public class PlayerMovement : MonoBehaviour
         else if (other.tag == "Alien")
         {
             Destroy(other.gameObject);
+            currentScoreText = Instantiate(scoreText, transform.position, transform.rotation);
+            currentScoreText.GetComponent<RectTransform>().position= gameObject.GetComponentInChildren<Camera>().WorldToScreenPoint(transform.position);
             currency++;
         }
 
